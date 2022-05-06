@@ -74,6 +74,26 @@ After setting it all up we can now dive into the real implementation of our API.
 
 
 
+//we could name the cretion endpoint /api/v1/workout because we'd like to add one workout, right?...
+
+
+Basically there's nothing wrong with that approach but this can lead to misunderstandings...
+
+
+
+//Always remember...Your API is used by other humans and should be precise....this goes also for naming your resources...
+
+
+
+//box is a collection that stores different workouts...
+
+
+
+//Naming your resources in plural has the big advantage thaat it's crystal cleaar to other humans, that is a collection that consists of different workouts...
+
+
+
+
 
 
 
