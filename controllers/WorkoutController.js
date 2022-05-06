@@ -3,12 +3,14 @@
 
 //now create controller for all the routes....
 
+const { getAllWorkouts, getOneWorkout, createNewWorkout, updateOneWorkout, deleteOneWorkout } = require("../services/workoutService")
+
 
 
 //get all workouts...
 
 exports.getAllWorkouts = (req, res) => {
-
+    const AllWorkouts = getAllWorkouts();
 }
 
 
@@ -19,6 +21,9 @@ exports.getAllWorkouts = (req, res) => {
 
 exports.getOneWorkout = (req, res) => {
 
+    const workout = getOneWorkout();
+
+
 }
 
 
@@ -27,7 +32,7 @@ exports.getOneWorkout = (req, res) => {
 
 
 exports.createNewWorkout = (req, res) => {
-
+    const createWorkout = createNewWorkout();
 }
 
 
@@ -35,7 +40,7 @@ exports.createNewWorkout = (req, res) => {
 
 
 exports.updateOneWorkout = (req, res) => {
-
+    const updatedWorkout = updateOneWorkout();
 }
 
 
@@ -44,5 +49,5 @@ exports.updateOneWorkout = (req, res) => {
 
 
 exports.deleteOneWorkout = (req, res) => {
-
+    const deletedWorkout = deleteOneWorkout()
 }
