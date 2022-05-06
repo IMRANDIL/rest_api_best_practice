@@ -96,6 +96,9 @@ Basically there's nothing wrong with that approach but this can lead to misunder
 
 
 
+//So, let's define our endpoints inside our workout router....
+
+
 
 
 
