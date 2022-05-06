@@ -4,12 +4,16 @@
 
 //create service for all the routes...
 
+const { getAllWorkouts } = require("../database/workout")
+
 
 //get all workouts...
 
 
 exports.getAllWorkouts = () => {
+    //import the method from database...
 
+    return getAllWorkouts()
 }
 
 

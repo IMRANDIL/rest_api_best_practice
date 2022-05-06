@@ -11,6 +11,7 @@ const { getAllWorkouts, getOneWorkout, createNewWorkout, updateOneWorkout, delet
 
 exports.getAllWorkouts = (req, res) => {
     const AllWorkouts = getAllWorkouts();
+    res.status(200).send(AllWorkouts)
 }
 
 

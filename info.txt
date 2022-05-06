@@ -137,3 +137,9 @@ so create service layer now...
 //To do that, we need a database and a collection of methods that acutally handle the database interaction. OUr database will be a simple JSON file that is pre-filled with some workouts already..
 
 
+As you can see there are three workouts inserted. One workout consists of an id, name, equipment, exercise, createdAt, updatedAt, and trainerTips...
+
+
+Let's start with the simplest one and return all workouts thaat are stored and start with implementing the corresponding method inside our Dataa Acess layer....
+
+
