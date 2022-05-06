@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: false }))
 //router middleware...
 
 
-app.use('/api/v1', require('./routes/bestpractRoute'))
+app.use('/api/v1', require('./routes/workoutRoutes'))
 
 
 

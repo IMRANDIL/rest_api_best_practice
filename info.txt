@@ -58,6 +58,21 @@ Inside the Controller we'll be handling all stuff that is related to HTTP. That 
 
 
 
+//Name Resources in Plural.....
+
+
+After setting it all up we can now dive into the real implementation of our API...LIke I said, I'd like to start with our fundaamental CRUD endpoints...
+
+
+
+//In other words, let's start implementing endpoints for creating, reading, updating and deleting workoouts...
+
+
+
+//First, let's hook up a specific controller, service, aand router for our workouts...
+
+
+
 
 
 
