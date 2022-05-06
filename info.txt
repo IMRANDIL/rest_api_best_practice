@@ -134,3 +134,6 @@ so create service layer now...
 //Inside our service methods we'll be handling our business logic like transforming data structures and communicating with our database layer...
 
 
+//To do that, we need a database and a collection of methods that acutally handle the database interaction. OUr database will be a simple JSON file that is pre-filled with some workouts already..
+
+
