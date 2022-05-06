@@ -27,6 +27,37 @@ Inside the Controller we'll be handling all stuff that is related to HTTP. That 
 
 
 
+//Versioning......
+
+//Wait a second, Before we  write any API-specific code we should be aware of versioning. LIke in other applications there will be improvements, new features, and stuff like that. So it is important to version our API as well...
+
+
+
+//The big advantage is that we can work on new features or improvements on a new Version while the clients are still using the current version and are affected by breaking changes...
+
+
+
+//One good practice is tot add a path segment like  v1 or v2 into the URL....
+
+
+//Version 1....
+
+/api/v1/workouts
+
+
+//version 2....
+
+/api/v2/workouts...
+
+
+
+//That's what we expose to the outside world and what can be consumed by other developers. But we also need to structure our  project in order to differentiaate between each version...
+
+
+//There are many different approaches to handling versioning inside an express API. In our case I'd like to create a sub folder for each version inside our src directory called v1....
+
+
+
 
 
 
