@@ -11,9 +11,14 @@ const { getAllWorkouts, createNewWorkout, getOneWorkout, updateOneWorkout, delet
 
 
 exports.getAllWorkouts = () => {
+    try {
+        return getAllWorkouts()
+    } catch (error) {
+        throw error;
+    }
     //import the method from database...
 
-    return getAllWorkouts()
+
 }
 
 
@@ -22,8 +27,13 @@ exports.getAllWorkouts = () => {
 
 
 exports.getOneWorkout = (workoutId) => {
-    const workout = getOneWorkout(workoutId);
-    return workout;
+    try {
+        const workout = getOneWorkout(workoutId);
+        return workout;
+    } catch (error) {
+        throw error;
+    }
+
 }
 
 
