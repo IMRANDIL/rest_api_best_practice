@@ -7,5 +7,5 @@ const path = require('path');
 
 
 exports.saveToDB = (DB) => {
-    fs.writeFileSync(path.join(__dirname, 'database', 'db.json'), JSON.stringify(DB, null, 2), { encoding: 'utf-8' })
+    fs.writeFileSync(path.join(__dirname, 'db.json'), JSON.stringify(DB, null, 2), { encoding: 'utf-8' })
 }
