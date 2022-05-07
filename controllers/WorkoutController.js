@@ -10,8 +10,14 @@ const { getAllWorkouts, getOneWorkout, createNewWorkout, updateOneWorkout, delet
 //get all workouts...
 
 exports.getAllWorkouts = (req, res) => {
-    const AllWorkouts = getAllWorkouts();
-    res.status(200).send(AllWorkouts)
+    try {
+        const AllWorkouts = getAllWorkouts();
+        res.status(200).send({ status: "OK", data: AllWorkouts });
+    } catch (error) {
+        res.status(error?.status || 500).send({ status: "FAILED", data: { error: error?.message || error } })
+    }
+
+
 }
 
 
@@ -27,15 +33,19 @@ exports.getOneWorkout = (req, res) => {
     const { workoutId } = req.params;
 
     if (!workoutId) {
-        return res.status(400).send('WorkoutId required')
+        return res.status(400).send({ status: "FAILED", data: { error: 'Parameter ":workoutId" can not be empty' } })
+    }
+
+    try {
+        const workout = getOneWorkout(workoutId);
+        //now send the response...
+
+        res.status(200).send({ status: "OK", data: workout })
+    } catch (error) {
+        res.status(error?.status || 500).send({ status: "FAILED", data: { error: error?.message || error } })
     }
 
 
-
-    const workout = getOneWorkout(workoutId);
-    //now send the response...
-
-    res.status(200).send({ status: "OK", data: workout })
 
 }
 
@@ -63,12 +73,18 @@ exports.createNewWorkout = (req, res) => {
         trainerTips: body.trainerTips
     }
 
+    try {
+        const createWorkout = createNewWorkout(newWorkout);
 
-    const createWorkout = createNewWorkout(newWorkout);
+        //now send the response...
 
-    //now send the response...
+        res.status(201).send({ status: "OK", data: createWorkout })
+    } catch (error) {
+        res.status(error?.status || 500).send({ status: "FAILED", data: { error: error?.message || error } })
+    }
 
-    res.status(201).send({ status: "OK", data: createWorkout })
+
+
 }
 
 
