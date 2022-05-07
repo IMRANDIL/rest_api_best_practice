@@ -100,5 +100,19 @@ exports.updateOneWorkout = (req, res) => {
 
 
 exports.deleteOneWorkout = (req, res) => {
-    const deletedWorkout = deleteOneWorkout()
+    //extrct the workoutId from req.params;
+
+    const { workoutId } = req.params;
+
+    if (!workoutId) {
+        return res.status(400).send('WorkoutId required')
+    }
+
+
+
+    const deletedWorkout = deleteOneWorkout(workoutId);
+
+    //now send the response...
+
+    res.status(200).send({ status: "OK" })
 }
