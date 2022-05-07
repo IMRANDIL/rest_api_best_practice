@@ -175,3 +175,16 @@ That was smooth...The next step is to use the database methods inside our workou
 
 
 
+//Respond with standard HTTP Error codes...
+
+//out api has the ability now to handle basic CRUD operations with data storage...That's great, but not really ideal..
+
+
+//it is always good practice to return proper HTTP error codes for different cases...
+
+//This helps the consumer or the engineer who built the API to identify the problem more easily..
+
+
+
+
+

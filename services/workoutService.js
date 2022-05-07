@@ -40,10 +40,16 @@ exports.createNewWorkout = (newWorkout) => {
         id: uuid(),
         createdAt: new Date().toLocaleString('en-US', { timeZone: "UTC" }),
         updatedAt: new Date().toLocaleString("en-US", { timeZone: "UTC" })
+    };
+
+    try {
+        const createdWorkout = createNewWorkout(workoutToInsert);
+        return createdWorkout;
+    } catch (error) {
+        throw error;
     }
 
-    const createdWorkout = createNewWorkout(workoutToInsert);
-    return createdWorkout;
+
 
 }
 
