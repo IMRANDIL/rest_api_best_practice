@@ -97,17 +97,23 @@ exports.updateOneWorkout = (req, res) => {
     const { params: { workoutId }, body } = req;
 
     if (!workoutId) {
-        return res.status(400).send('WorkoutId required')
+        return res.status(400).send({ status: "FAILED", data: { error: "Parameter ':workoutId' can not be empty" } })
     }
 
 
 
+    try {
+        const updatedWorkout = updateOneWorkout(workoutId, body);
 
-    const updatedWorkout = updateOneWorkout(workoutId, body);
+        //now send the response...
 
-    //now send the response...
+        res.send({ status: "OK", data: updatedWorkout })
+    } catch (error) {
+        res.status(error?.status || 500).send({ status: "FAILED", data: { error: error?.message || error } })
+    }
 
-    res.send({ status: "OK", data: updatedWorkout })
+
+
 }
 
 
