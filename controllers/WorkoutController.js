@@ -76,7 +76,22 @@ exports.createNewWorkout = (req, res) => {
 
 
 exports.updateOneWorkout = (req, res) => {
-    const updatedWorkout = updateOneWorkout();
+    //extract the workoutId from req.params;
+
+    const { params: { workoutId }, body } = req;
+
+    if (!workoutId) {
+        return res.status(400).send('WorkoutId required')
+    }
+
+
+
+
+    const updatedWorkout = updateOneWorkout(workoutId, body);
+
+    //now send the response...
+
+    res.send({ status: "OK", data: updatedWorkout })
 }
 
 
