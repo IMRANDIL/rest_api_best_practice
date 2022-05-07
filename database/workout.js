@@ -29,13 +29,33 @@ exports.createNewWorkout = (newWorkout) => {
 
 
 exports.getOneWorkout = (workoutId) => {
-
+    const workout = DB.workouts.find((workout) => workout.id === workoutId);
+    if (!workout) {
+        throw new Error('No such workout exists with this id')
+    }
+    return workout;
 }
 
 
 //update one workout...
 
 exports.updateOneWorkout = (workoutId, changes) => {
+
+    const indexForUpdate = DB.workouts.findIndex((workout) => workout.id === workoutId);
+
+    if (indexForUpdate === -1) {
+        throw new Error('no such workout exists with this id')
+    }
+    const updateWorkout = {
+        ...DB.workouts[indexForUpdate],
+        ...changes,
+        updatedAt: new Date().toLocaleString('en-US', { timeZone: "UTC" })
+    }
+
+    DB.workouts[indexForUpdate] = updateWorkout;
+    saveToDB(DB);
+    return updateWorkout;
+
 
 }
 
@@ -44,5 +64,10 @@ exports.updateOneWorkout = (workoutId, changes) => {
 
 
 exports.deleteOneWorkout = (workoutId) => {
-
+    const indexForDeletion = DB.workouts.findIndex((workout) => workout.id === workoutId);
+    if (indexForDeletion === -1) {
+        throw new Error('no such workout exists!');
+    }
+    DB.workouts.splice(indexForDeletion, 1);
+    saveToDB(DB);
 }
