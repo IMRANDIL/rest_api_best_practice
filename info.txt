@@ -169,6 +169,8 @@ As you've might noticed, there are some properties missing like "id", "createdAt
 
 //now we can use the util function in our Workout.js...
 
+That was smooth...The next step is to use the database methods inside our workout service..
+
 
 
 
