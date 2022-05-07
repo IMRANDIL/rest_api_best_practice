@@ -10,7 +10,7 @@ const router = require('express').Router();
 router.route('/').get(getAllWorkouts).post(createNewWorkout);
 
 
-router.route('/:id').get(getOneWorkout).patch(updateOneWorkout).delete(deleteOneWorkout)
+router.route('/:workoutId').get(getOneWorkout).patch(updateOneWorkout).delete(deleteOneWorkout)
 
 
 

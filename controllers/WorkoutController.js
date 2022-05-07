@@ -22,8 +22,20 @@ exports.getAllWorkouts = (req, res) => {
 
 exports.getOneWorkout = (req, res) => {
 
-    const workout = getOneWorkout();
+    //extract workoutId from the req.params;
 
+    const { workoutId } = req.params;
+
+    if (!workoutId) {
+        return res.status(400).send('WorkoutId required')
+    }
+
+
+
+    const workout = getOneWorkout(workoutId);
+    //now send the response...
+
+    res.status(200).send({ status: "OK", data: workout })
 
 }
 
