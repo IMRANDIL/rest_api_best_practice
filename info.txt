@@ -156,4 +156,19 @@ As you've might noticed, there are some properties missing like "id", "createdAt
 
 //Inside the method createNewWorkout in our workout controller, we can extract the body from the request object, do some validation, and pass it as an argument to our workout service...
 
+//To improve the request validation you normally would use a thirdparty package like express-validator...
+
+
+//now go into our workout service and receive the data inside our createNewWorkout method...
+
+
+//After that we add the missing properties to the object and pass it to aa new method in our Data Access layer to store it inside our DB...
+
+//First, we create a simple Util Function to overwrite our JSON file to persist the data...
+
+
+
+
+
+
 
