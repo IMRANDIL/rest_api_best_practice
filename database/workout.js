@@ -24,3 +24,25 @@ exports.createNewWorkout = (newWorkout) => {
     saveToDB(DB);
     return newWorkout;
 }
+
+//get one workout...
+
+
+exports.getOneWorkout = (workoutId) => {
+
+}
+
+
+//update one workout...
+
+exports.updateOneWorkout = (workoutId, changes) => {
+
+}
+
+
+//delete one workout...
+
+
+exports.deleteOneWorkout = (workoutId) => {
+
+}

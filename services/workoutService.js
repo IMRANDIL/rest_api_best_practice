@@ -4,7 +4,7 @@ const { v4: uuid } = require('uuid');
 
 //create service for all the routes...
 
-const { getAllWorkouts, createNewWorkout } = require("../database/workout")
+const { getAllWorkouts, createNewWorkout, getOneWorkout, updateOneWorkout, deleteOneWorkout } = require("../database/workout")
 
 
 //get all workouts...
@@ -21,8 +21,9 @@ exports.getAllWorkouts = () => {
 //get one workout....
 
 
-exports.getOneWorkout = () => {
-
+exports.getOneWorkout = (workoutId) => {
+    const workout = getOneWorkout(workoutId);
+    return workout;
 }
 
 
@@ -50,13 +51,14 @@ exports.createNewWorkout = (newWorkout) => {
 
 //update one workout...
 
-exports.updateOneWorkout = () => {
-
+exports.updateOneWorkout = (workoutId, changes) => {
+    const updatedWorkout = updateOneWorkout(workoutId, changes);
+    return updatedWorkout;
 }
 
 
 //delete one wokrout...
 
-exports.deleteOneWorkout = () => {
-
+exports.deleteOneWorkout = (workoutId) => {
+    return deleteOneWorkout(workoutId)
 }
