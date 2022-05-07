@@ -33,7 +33,30 @@ exports.getOneWorkout = (req, res) => {
 
 
 exports.createNewWorkout = (req, res) => {
-    const createWorkout = createNewWorkout();
+    //extract data from the req.body...
+
+    const { body } = req;
+
+    //now some validation...
+
+    if (!body.name || !body.mode || !body.equipment || !body.exercises || !body.trainerTips) {
+        return res.status(400).send('All Fields Required!')
+    }
+
+    const newWorkout = {
+        name: body.name,
+        mode: body.mode,
+        equipment: body.equipment,
+        exercises: body.exercises,
+        trainerTips: body.trainerTips
+    }
+
+
+    const createWorkout = createNewWorkout(newWorkout);
+
+    //now send the response...
+
+    res.status(201).send({ status: "OK", data: createWorkout })
 }
 
 
